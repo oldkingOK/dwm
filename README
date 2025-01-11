@@ -10,6 +10,12 @@ In order to build dwm you need the Xlib header files.
 
 Installation
 ------------
+Addtional fonts is needed
+
+```shell
+pacman -S noto-fonts noto-fonts-cjk noto-fonts-extra
+```
+
 Edit config.mk to match your local setup (dwm is installed into
 the /usr/local namespace by default).
 
