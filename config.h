@@ -62,6 +62,10 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[] = { "slock", NULL };
 static const char *backlightupcmd[] = { "xbacklight", "-inc", "20", NULL };
 static const char *backlightdowncmd[] = { "xbacklight", "-dec", "20", NULL };
+static const char *raisevolumncmd[] = { "amixer", "set", "Master", "5%+", NULL };
+static const char *lowervolumncmd[] = { "amixer", "set", "Master", "5%-", NULL };
+static const char *mutecmd[] = { "amixer", "set", "Master", "toggle", NULL };
+static const char *audiomixercmd[] = { "st", "-e", "alsamixer", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -70,6 +74,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ 0     ,                       XF86XK_MonBrightnessUp, spawn,          {.v = backlightupcmd } },
 	{ 0     ,                       XF86XK_MonBrightnessDown, spawn,          {.v = backlightdowncmd } },
+	{ 0     ,                       XF86XK_AudioLowerVolume, spawn,          {.v = lowervolumncmd } },
+	{ 0     ,                       XF86XK_AudioMute, spawn,          {.v = mutecmd } },
+	{ 0     ,                       XF86XK_AudioRaiseVolume, spawn,          {.v = raisevolumncmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = audiomixercmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
