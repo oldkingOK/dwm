@@ -75,6 +75,7 @@ static const char *lowervolumncmd[] = { "amixer", "set", "Master", "5%-", NULL }
 static const char *mutecmd[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *audiomixercmd[] = { "st", "-e", "alsamixer", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
+static const char *clipmenucmd[] = { "clipmenu", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -86,7 +87,8 @@ static const Key keys[] = {
 	{ 0     ,                       XF86XK_AudioLowerVolume, spawn,          {.v = lowervolumncmd } },
 	{ 0     ,                       XF86XK_AudioMute, spawn,          {.v = mutecmd } },
 	{ 0     ,                       XF86XK_AudioRaiseVolume, spawn,          {.v = raisevolumncmd } },
-	{ MODKEY,                       XK_v,      spawn,          {.v = audiomixercmd} },
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = audiomixercmd} },
+	{ MODKEY,                       XK_v,      spawn,          {.v = clipmenucmd} },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = screenshotcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
