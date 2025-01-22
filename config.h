@@ -73,7 +73,7 @@ static const char *backlightdowncmd[] = { "xbacklight", "-dec", "10", NULL };
 static const char *raisevolumncmd[] = { "amixer", "set", "Master", "5%+", NULL };
 static const char *lowervolumncmd[] = { "amixer", "set", "Master", "5%-", NULL };
 static const char *mutecmd[] = { "amixer", "set", "Master", "toggle", NULL };
-static const char *audiomixercmd[] = { "st", "-e", "alsamixer", NULL };
+static const char *audiomixercmd[] = { "st", "-e", "pulsemixer", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *clipmenucmd[] = { "clipmenu", NULL };
 
