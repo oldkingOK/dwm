@@ -75,6 +75,7 @@ static const char *lowervolumncmd[] = { "amixer", "set", "Master", "5%-", NULL }
 static const char *mutecmd[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *audiomixercmd[] = { "st", "-e", "pulsemixer", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
+static const char *screen_ocrcmd[] = { "scrocr", NULL };
 static const char *clipmenucmd[] = { "clipmenu", NULL };
 
 static const Key keys[] = {
@@ -90,6 +91,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = audiomixercmd} },
 	{ MODKEY,                       XK_v,      spawn,          {.v = clipmenucmd} },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = screenshotcmd} },
+	{ MODKEY|ShiftMask,             XK_o,      spawn,          {.v = screen_ocrcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
